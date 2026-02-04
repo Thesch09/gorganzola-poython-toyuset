@@ -5,31 +5,35 @@ import random
 for i in range(100):
     print(f"On day number {i+1} of the apocalypse my true love gave to me {items[random.randint(0, len(items)-1)]}")
 
-print("GOD IF YOU GIVE ME 2 NUMBERS AND I SAY WHICH ONE IS THE LARGER ONE, WILL YOU PLEASE END THIS APOCALYPSE, PLEASE?")
+print("GOD IF YOU GIVE ME SOME NUMBERS AND I SAY THE SUM, WILL YOU PLEASE END THIS APOCALYPSE, PLEASE?")
 
-num1 = ""
-while num1 == "":
-    try:
-        num1 = input("Please give us a chance...").strip()
-        num1 = int(num1)
-    except ValueError:
-            print(f"{num1} isn't a whole number, just give us a chance")
-            num1 = ""
-num2 = ""
-while num2 == "":
-    try:
-        num2 = input("AND THE SECOND ONE, PLEASE!").strip()
-        num2 = int(num2)
-    except ValueError:
-            print(f"PLEASE JUST MAKE {num2} A WHOLE NUMBER PLEASE")
-            num2 = ""
+numbahs = []
 
-if num1 > num2:
-    print(f"Well God, {num1} is bigger!")
-elif num2 > num1:
-    print(f"Well God, {num2} is bigger!")
-else:
-    print("They're the same!")
+
+times = ""
+while times == "":
+    try:
+        times = input("HOW MANY NUMBERS??? ").strip()
+        times = int(times)
+    except ValueError:
+            print(f"PLEASE JUST MAKE {times} A WHOLE NUMBER PLEASE")
+            times = ""
+
+for i in range(times):
+    num1 = ""
+    while num1 == "":
+        try:
+            num1 = input("Please give us a chance...").strip()
+            num1 = int(num1)
+        except ValueError:
+                print(f"{num1} isn't a whole number, just give us a chance")
+                num1 = ""
+
+    list.append(numbahs, num1)
+
+
+print(f"Well God, the sum is {sum(numbahs)}")
+
 
 damnation = input("Type no if you want them to suffer for eternity >:)").lower().strip()
 if damnation == "no":
