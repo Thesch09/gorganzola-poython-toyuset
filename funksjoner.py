@@ -18,28 +18,30 @@ def rektangel():
                 lengde = ""
     return(lengde * bredde)
 
+def checkNum():
+    n1 = ""
+    while n1 == "":
+        try:
+            n1 = input("VENNLIGST TAST INN TALL 1 ").strip()
+            n1 = int(n1)
+        except ValueError:
+                print(f"{n1} ER IKKE ET HEL TALL, PRØV IGJEN")
+                n1 = ""
+    n2 = ""
+    while n2 == "":
+        try:
+            n2 = input("VENNLIGST TAST INN TALL 2 ").strip()
+            n2 = int(n2)
+        except ValueError:
+                print(f"{n1} ER IKKE ET HEL TALL, PRØV IGJEN")
+                n2 = ""
+    if n1 > n2:
+        return(n1)
+    elif n2 > n1:
+        return(n2)
+    else:
+        return("BEGGE")
+
+
 print(f"REKTANGLET HAR AREAL PÅ {rektangel()}")
-
-num1 = ""
-while num1 == "":
-    try:
-        num1 = input("Please give us a chance...").strip()
-        num1 = int(num1)
-    except ValueError:
-            print(f"{num1} isn't a whole number, just give us a chance")
-            num1 = ""
-num2 = ""
-while num2 == "":
-    try:
-        num2 = input("AND THE SECOND ONE, PLEASE!").strip()
-        num2 = int(num2)
-    except ValueError:
-            print(f"PLEASE JUST MAKE {num2} A WHOLE NUMBER PLEASE")
-            num2 = ""
-
-if num1 > num2:
-    print(f"Well God, {num1} is bigger!")
-elif num2 > num1:
-    print(f"Well God, {num2} is bigger!")
-else:
-    print("They're the same!")
+print(f"{checkNum()} ER DET STØRSTE TALLET")
